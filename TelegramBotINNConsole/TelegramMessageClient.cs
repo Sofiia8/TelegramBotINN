@@ -55,22 +55,22 @@ namespace TelegramBotINNConsole
                     answer = "You are welcome on board!\n";
                     break;
                 case "/help":
-                    answer = "Input /start - to start a dialog,\n" +
-                            "Input /help - to show a list of avaliable commands,\n" +
+                    answer = "Input /start - to start a dialogue,\n" +
+                            "Input /help - to show a list of available commands,\n" +
                             "Input /hello - to show my name and surname, email and date of start,\n" +
                             "Input /inn - to get and show info about legal entities by their INN,\n" +
-                            "Input /full - to get and show full info about legal entity by its INN.";
+                            "Input /full - to get and show full info about a legal entity by its INN.";
                     break;
                 case "/hello":
                     answer = "My name is Bezukhova Sofiia,\nemail - sofi_92@mail.ru,\ndate of start - 06.11.2023";
                     break;
                 case "/inn":
-                    answer = "Please enter one or several INN(s) to get info about legal entities.\n" +
-                             "Use format: <<INN_1>,<INN_2>,...,<INN_n>>,\nwhere <INN_i> - sequence of numbers like 1234567.";
+                    answer = "Please enter one or several INN(s) to get info about a legal entities.\n" +
+                             "Use the format: <<INN_1>,<INN_2>,...,<INN_n>>,\nwhere <INN_i> - a sequence of numbers like 1234567.";
                     break;
                 case "/full":
-                    answer = "Please enter one INN to get full info about legal entity.\n" +
-                             "Use format: <#INN>,\nwhere INN - sequence of numbers like 1234567.";
+                    answer = "Please enter one INN to get full info about a legal entity.\n" +
+                             "Use the format: <#INN>,\nwhere INN - a sequence of numbers like 1234567.";
                     break;
                 default:
                     if (CheckRequest.CheckFormatMainInfo(text))
@@ -85,7 +85,7 @@ namespace TelegramBotINNConsole
                     }
                     else
                     {
-                        answer = "Not correct request";
+                        answer = "Incorrect request";
                     }
                     break;
 

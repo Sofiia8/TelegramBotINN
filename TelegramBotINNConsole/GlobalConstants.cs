@@ -9,7 +9,8 @@ namespace TelegramBotINNConsole
     internal static class GlobalConstants
     {
         public const int chunkSize = 4096;
-        public const string ApiFNSUrl = "https://api-fns.ru/api/egr";
+        public const string ApiFNSUrl = "https://api-fns.ru/api/multinfo";
+        public const string ApiFNSUrlFull = "https://api-fns.ru/api/egr";
     }
 
 }

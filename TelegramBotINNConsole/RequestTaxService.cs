@@ -52,14 +52,14 @@ namespace TelegramBotINNConsole
             }
             catch (Exception ex)
             {
-                return "Not success connection with Tax Service";
+                return "Unsuccessful connection with Tax Service";
             }
         }
 
         internal async Task<string> GetFullInfoByINNAsync(string request)
         {
             var key = _configuration["TaxServiceTokenKey"];
-            StringBuilder stringBuilder = new StringBuilder(GlobalConstants.ApiFNSUrl);
+            StringBuilder stringBuilder = new StringBuilder(GlobalConstants.ApiFNSUrlFull);
             stringBuilder.AppendLine($"?req={request}&key={key}");
 
             try
@@ -87,7 +87,7 @@ namespace TelegramBotINNConsole
             }
             catch (Exception ex)
             {
-                return "Not success connection with Tax Service";
+                return "Unsuccessful connection with Tax Service";
             }
         }
         
