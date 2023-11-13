@@ -100,16 +100,14 @@ namespace TelegramBotINNConsole
         private async Task splitTextToChunks(string bigString, Message message)
         {
             int chunkSize = GlobalConstants.chunkSize;
-            int totalChunks = (int)Math.Ceiling((double)bigString.Length / chunkSize);
-            string chunk = "";
 
-            for (int i = 0; i < totalChunks; i++)
+            var chunks = Enumerable.Range(0, bigString.Length / chunkSize).Select( i => 
+                              bigString.Substring(i * chunkSize, chunkSize));
+            foreach (var chunk in chunks)
             {
-                int start = i * chunkSize;
-                int length = Math.Min(chunkSize, bigString.Length - start);
-                chunk = bigString.Substring(start, length);
                 await _bot.SendTextMessageAsync(message.Chat, chunk);
             }
+            return;
         }
         private static async Task handleErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
         {
